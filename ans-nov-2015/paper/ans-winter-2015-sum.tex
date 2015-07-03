@@ -5,8 +5,7 @@
 \usepackage{subfigure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \title{Modernizing Computational Nuclear Engineering Education in the Open}
-\author{Kathryn~Huff$^{1}$}
-\author{Anthony~M.~Scopatz$^{1}$}
+\author{Kathryn~Huff$^{1}$, Anthony~M.~Scopatz$^{2}$}
 \institute{
 $^{1}$ The University of California -- Berkeley, Berkeley, CA 94709 \\
 \and $^{2}$ The University of South Carolina, Columbia, SC 29208 \\
@@ -43,8 +42,9 @@ $^{1}$ The University of California -- Berkeley, Berkeley, CA 94709 \\
 
 We present a syllabus for teaching scientific computing best practices to
 university students in nuclear science and engineering.  This course is modeled after the
-book, ``Effective Computation in Physics: A Field Guide to Research in Python``
-and uses that work as the course textbook.
+book, ``Effective Computation in Physics: A Field Guide to Research in
+Python`` \cite{scopatz_effective_2015} and uses that work as the course
+textbook.
 
 This summary will first motivate the need for modernized university-level nuclear
 engineering curriculum in scientific software development and data analysis
@@ -58,8 +58,8 @@ the course.
 
 Nuclear engineering is an exceptionally computational field. Indeed, in the very early
 days of computing,  nuclear applications drove the majority of innovation
-in computers, computation, and scientific simulation. Today's nuclear
-engineering students, however, are not poised to become leaders in computing,
+in computers, computation, and scientific simulation \cite{rhodes_making_2012}. Today's nuclear
+engineering students, however, are not as poised to become leaders in computing,
 as was once the case.
 In part, this is due to the regulatory climate in nuclear engineering which
 necessitates the use of battle-hardened software implemented in legacy
@@ -70,12 +70,14 @@ have evolved alongside them.
 
 Nuclear engineering once led the world in computing and has fallen behind, but
 not because the challenges have gotten easier. In fact, nuclear engineering
-nuclear engineering applications rely on enormous datasets in many
-dimensions, traverses disparate scales, incorporate many physics, and demand
-precision. Typical nuclear data typically takes the form of large libraries involving
-tabulated and evaluated data representing neutron, charged particle, and atomic
-reaction probabilities for all of the more than three thousand known
-radionuclides.
+applications continue to rely on enormous datasets in many
+dimensions, traverse disparate scales, incorporate many physics, and demand
+precision.
+
+%Typical nuclear data typically takes the form of large libraries involving
+%tabulated and evaluated data representing neutron, charged particle, and atomic
+%reaction probabilities for all of the more than three thousand known
+%radionuclides.
 
 For example, the driving equation for neutron behavior, the time-dependent
 Boltzmann equation, is solved in a 7-dimensional phase space, ($3$ in space, $2$
@@ -96,35 +98,39 @@ advancements in nuclear engineering research and development.
 Specifically, training them in best practices already commonplace in commercial
 software development could have an enormous impact on reproducibility in
 nuclear science and engineering. Thus equipped, their contributions to nuclear
-engineering may even have a revitalizng effect on the field.
+engineering may even have a revitalizing effect on the field.
 
 \subsection{Modern Programming Languages}
 
 Due to our reliance on legacy software, the undergraduate first course in
-computing at many Nuclear Engineering departments emphasizes MATLAB or Fortrain
+computing at many Nuclear Engineering departments emphasizes Fortran
 rather the modern equivalents, Python and C++. Studies have shown that
 productivity in a high-level language (like Python).
 
-Unlike MATLAB, Python programming scales to meet the demands of high performance computing applications.
+Python programming scales to meet the demands of high performance computing applications.
 
-\subsection{Reproducible Workflows}
+\subsection{Efficient and Reproducible Workflows}
 
 Best practices for efficient and reproducible modeling and analysis, though
-common in commerical software development, are typically missing from nuclear
-engineering curriculum as well. A similar lack of such workflows accross
+common in commercial software development, are typically missing from nuclear
+engineering curriculum as well. A similar lack of such workflows across
 academic science at large and is  at the root of an enormous credibility
 crisis in scientific computing \cite{donoho, stodden}.
 
 \subsection{Open Source and Open Science}
 
 Computational tools and data grow more robust with a broad base of users and
-developers. The physics community has used this fact to the great benefit of,
-for example, the Large Hadron Collider experiment. In that instance, faced with
-an enormous computing challenge and potential for human error, the
-experimenters opened both the software and the data to the whole world. This
-massive scale peer review is unknown in nuclear where a combination of export
-control issues and antiquated workflow paradigms mean that only a very small
-number of tools have been open sourced \cite{moose}\cite{pyne}\cite{cyclus}.
+developers \cite{petre_code_2014, wicherts_willingness_2013}. The physics
+community has used this fact to the great benefit of, for example, the Large
+Hadron Collider experiment. In that instance, faced with an enormous computing
+challenge and potential for human error, the experimenters opened both the
+software and the data to the whole world. This massive scale peer review is
+unknown in nuclear where a combination of export control issues and antiquated
+workflow paradigms mean that only a very small number of tools have been open
+sourced \cite{moose}\cite{pyne}\cite{cyclus}.
+
+Since Python is open source, students are able to use it more flexibly and for
+free than alternative high-level frameworks, like MATLAB.
 
 \section{Course Recommendations}
 
@@ -202,7 +208,7 @@ The textbook.
 The material and concepts proposed here were heavily influence by the work done
 by the Software Carpentry Foundation, an organization that
 
-Software Carpentry has been involed with teaching scientific computing best
+Software Carpentry has been involved with teaching scientific computing best
 practices for over a decade. Students have come from many areas of science and
 usually no programming experience is necessary to attend a course. The courses
 are typically two days and cover skills for "Doing more with less pain."
@@ -215,7 +221,9 @@ automated unit testing.
 
 \section{Conclusions}
 
-This course will equip students with modern concepts that will make them more effective researchers in the data and computing intensive domain of nuclear engineering. These concepts include modules for :
+This course will equip students with modern concepts that will make them more
+effective researchers in the data and computing intensive domain of nuclear
+engineering. These concepts include modules for :
 
 \begin{itemize}
 \item getting started with a modern, high-level, object-oriented programming language,
@@ -224,7 +232,7 @@ This course will equip students with modern concepts that will make them more ef
 \item getting work publication ready with the help of modern computing.
 \end{itemize}
 
-By emphasixing projects along the way, the students in this course will learn
+By emphasizing projects along the way, the students in this course will learn
 to create free and open source tools, verify the functioning of those tools,
 and publish them online.  Finally, the syllabus and course textbook are open
 and affordable, respectively.
