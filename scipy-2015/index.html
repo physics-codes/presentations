@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+                <title>Effective Computation In Physics</title>
+
+                <meta name="description" content="
+                lightning talk for SciPy 2015
+                ">
+		<meta name="author" content="Kathryn Huff & Anthony Scopatz">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/simple.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+		<script>
+			if( window.location.search.match( /print-pdf/gi ) ) {
+				var link = document.createElement( 'link' );
+				link.rel = 'stylesheet';
+				link.type = 'text/css';
+				link.href = 'css/print/pdf.css';
+				document.getElementsByTagName( 'head' )[0].appendChild( link );
+			}
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+                                <section>
+                                <h2>It. Is. Here.</h2>
+                                <span class="fragment">
+                                                <a
+                                                  href="http://physics.codes"
+                                                  class="image"><img
+                                                   width="45%"
+                                                  src="https://covers.oreillystatic.com/images/0636920033424/lrg.jpg"
+                                                  alt="book"></a>
+                                                </span>
+                                        </section>
+                                <section>
+                                        <section>
+                                         <h3>Getting Started</h3>
+                                                <span class="fragment">
+                                                  <a
+                                                    href="https://raw.githubusercontent.com/katyhuff/town-hall/gh-pages/images/blame.png"
+                                                    class="image"><img
+                                                    width="50%"
+                                                    src="https://raw.githubusercontent.com/katyhuff/town-hall/gh-pages/images/blame.png"
+                                                    alt="getting done"></a>
+                                                </span>
+                                                <span class="fragment">
+                                                <small>
+                                                <br/>
+                                                <br/>
+                                                <ul>
+                                                  <li>Chapter 1 - Introduction to the Command Line</li>
+                                                  <li>Chapter 2 - Programming Blast Off with Python</li>
+                                                  <li>Chapter 3 - Essential Containers</li>
+                                                  <li>Chapter 4 - Flow Control and Logic</li>
+                                                  <li>Chapter 5 - Operating with Functions</li>
+                                                  <li>Chapter 6 - Classes and Objects</li>
+                                                </ul>
+                                                </small>
+                                                </span>
+                                        </section>
+                                        <section>
+                                         <h3>Getting It Done</h3>
+                                                <span class="fragment">
+                                                  <a
+                                                    href="http://physics.codes/images/n-body-save-t0.001.png"
+                                                    class="image"><img
+                                                    width="50%"
+                                                    src="http://physics.codes/images/n-body-save-t0.001.png"
+                                                    alt="getting it done"></a>
+                                                </span>
+                                                <span class="fragment">
+                                                <small>
+                                                <br/>
+                                                <br/>
+                                                <ul>
+                                                  <li>Chapter 7 - Analysis and Visualization</li>
+                                                  <li>Chapter 8 - Regular Expressions</li>
+                                                  <li>Chapter 9 - NumPy: Thinking in Arrays</li>
+                                                  <li>Chapter 10 - Storing Data: Files and HDF5</li>
+                                                  <li>Chapter 11 - Important Data Structures in Physics</li>
+                                                  <li>Chapter 12 - Performing in Parallel</li>
+                                                  <li>Chapter 13 - Deploying Software</li>
+                                                </ul>
+                                                </small>
+                                                </span>
+                                        </section>
+                                        <section>
+                                         <h3>Getting It Right</h3>
+                                                <span class="fragment">
+                                                  <a
+                                                    href="http://physics.codes/images/runsnake-fh.png"
+                                                    class="image"><img
+                                                    width="50%"
+                                                    src="http://physics.codes/images/runsnake-fh.png"
+                                                    alt="getting it right"></a>
+                                                </span>
+                                                <span class="fragment">
+                                                <small>
+                                                <br/>
+                                                <br/>
+                                                <ul>
+                                                  <li>Chapter 14 - Building Software Pipelines</li>
+                                                  <li>Chapter 15 - Local Version Control</li>
+                                                  <li>Chapter 16 - Remote Version Control</li>
+                                                  <li>Chapter 17 - Debugging</li>
+                                                  <li>Chapter 18 - Testing</li>
+                                                </ul>
+                                                </small>
+                                                </span>
+                                        </section>
+                                        <section>
+                                         <h3>Getting It Out There</h3>
+                                                <span class="fragment">
+                                                <a
+                                                  href="http://physics.codes/images/self_assign.png"
+                                                  class="image"><img
+                                                  width="50%"
+                                                  src="http://physics.codes/images/self_assign.png"
+                                                  alt="getting it out there"></a>
+                                                </span>
+                                                <span class="fragment">
+                                                <small>
+                                                <br/>
+                                                <br/>
+                                                <ul>
+                                                  <li>Chapter 19 - Documentation</li>
+                                                  <li>Chapter 20 - Publication</li>
+                                                  <li>Chapter 21 - Collaboration</li>
+                                                  <li>Chapter 22 - Licenses, Ownership, and Copyright</li>
+                                                  <li>Chapter 23 - Further Musings</li>
+                                                </ul>
+                                                </small>
+                                                </span>
+                                        </section>
+                                </section>
+				<section>
+					<section>
+                                        <h2>Why?</h2>
+                                                <span class="fragment">
+                                                <a
+                                                  href="https://drawception.com/pub/panels/2012/4-28/1MsErEm1PB-12.png"
+                                                  class="image"><img
+                                                  src="https://drawception.com/pub/panels/2012/4-28/1MsErEm1PB-12.png"
+                                                  alt="confused squid"></a>
+                                                </span>
+					</section>
+                                        <section>
+                                        <h2>Why (us)?</h2>
+                                                <span class="fragment">
+                                                <a
+                                                  href="https://docs.google.com/drawings/d/1ByU7sbSXU5ifoMDgq2HYKJrn-BRqQ5kQQN-ujned5cg/pub?w=960&h=720"
+                                                  class="image"><img
+                                                  src="https://docs.google.com/drawings/d/1ByU7sbSXU5ifoMDgq2HYKJrn-BRqQ5kQQN-ujned5cg/pub?w=960&h=720"
+                                                  alt="book venn us"></a>
+                                                </span>
+                                        </section>
+                                        <section>
+                                        <h2>Why (you)?</h2>
+                                                <span class="fragment">
+                                                <a
+                                                  href="https://docs.google.com/drawings/d/1ByU7sbSXU5ifoMDgq2HYKJrn-BRqQ5kQQN-ujned5cg/pub?w=960&h=720"
+                                                  class="image"><img
+                                                  src="https://docs.google.com/drawings/d/1isvoWiad8Knrd1btWKAs1OEtjzoMfwj61xlpATMU9W4/pub?w=1440&h=1080"
+                                                  alt="book venn you"></a>
+                                                </span>
+                                        </section>
+                                </section>
+				<section>
+                                        <section>
+                                        <h2>Get The Book!</h2>
+                                        <ul>
+                                          <li>
+                                          <a href="http://physics.codes/">
+                                                  physics.codes
+                                          </a></li>
+                                          <li>
+                                          <a
+                                                  href="http://twitter.com/physics_codes">
+                                                  @physics_codes
+                                          </a></li>
+
+                                          <li>
+                                          <a href="http://github.com/physics.codes/examples">
+                                                  github.com/physics.codes/examples
+                                          </a></li>
+
+                                          <li>
+                                          <a href="http://shop.oreilly.com/product/0636920033424.do">
+                                                  oreilly.com (ebook and treebook)
+                                          </a></li>
+                                          <li>eval("review or buy") </li>
+                                        </ul>
+                                        <p>
+                                                <a
+                                                  href="http://physics.codes"
+                                                  class="image"><img
+                                                  width="25%"
+                                                  src="https://covers.oreillystatic.com/images/0636920033424/lrg.jpg"
+                                                  alt="book"></a>
+                                          </p>
+                                        </section>
+					<section>
+                                        <h2>Acknowledgements</h2>
+                                             Greg, Fernando, reviewers.
+                                        </section>
+					<section>
+                                        <h2>Acknowledgements</h2>
+                                                <a
+                                                  href="http://software-carpentry.org"
+                                                  class="image"><img
+                                                  width="30%"
+                                                  src="http://software-carpentry.org/img/software-carpentry-banner.png"
+                                                  alt="SWC"></a>
+                                                <a
+                                                  href="http://thehackerwithin.github.io"
+                                                  class="image"><img
+                                                  width="30%"
+                                                  src="http://thehackerwithin.github.io/images/thw_icon.png"
+                                                  alt="THW"></a>
+                                                 <p>This book was heavily inspired by the work of
+                                                  <a href="http://software-carpentry.org/">Software Carpentry</a> and
+                                                  <a href="http://thehackerwithin.github.io/">The Hacker Within</a>.
+                                                  We are thrilled to see <i>Effective Computation in Physics</i>
+                                                  come to press and spread the
+                                                  joys of computation further into the physical sciences.
+                                                  In case you were wondering, the cuddly creature on the cover is a
+                                                  <a href="http://en.wikipedia.org/wiki/Bobtail_squid">bobtail
+                                                  squid</a>.
+                                                  </p>
+                                        </section>
+                                </section>
+				<section>
+					<h1>THE END</h1>
+                                        <h3><a href="https://katyhuff.github.io">Katy Huff and Anthony Scopatz</a> </h3>
+                                        <a href="https://katyhuff.github.io/bids-faire-2015">katyhuff.github.io/bids-faire-2015</a>
+
+<br/>
+<a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img
+  alt="Creative Commons License" style="border-width:0"
+  src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br /><span
+  xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Effective
+  Computation In Physics?</span> by <a
+  xmlns:cc="http://creativecommons.org/ns#" href="http://katyhuff.github.io"
+  property="cc:attributionName" rel="cc:attributionURL">Kathryn Huff and
+  Anthony Scopatz</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.<br />Based on a work at <a xmlns:dct="http://purl.org/dc/terms/" href="http://katyhuff.github.io/bids-faire-2015" rel="dct:source">http://katyhuff.github.io/bids-faire-2015</a>.
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Parallax scrolling
+				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+				// parallaxBackgroundSize: '2100px 900px',
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+                                        { src: 'plugin/math/math.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
