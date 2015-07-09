@@ -40,44 +40,67 @@ $^{1}$ The University of California -- Berkeley, Berkeley, CA 94709 \\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Introduction}
 
-We present a syllabus for teaching scientific computing best practices to
-university students in nuclear science and engineering.  This course is modeled after the
-book, ``Effective Computation in Physics: A Field Guide to Research in
-Python`` \cite{scopatz_effective_2015} and uses that work as the course
-textbook.
+In the very early days of computing, nuclear engineering applications drove the
+majority of innovation in computers, computation, and scientific simulation
+\cite{rhodes_making_2012}. Today's nuclear engineering students, however, are
+not poised to become leaders in computing, as was once the case. Modern
+scientific computing best practices have the potential to revitalize research
+computing in our domain and provide broader opportunities in industry for
+graduating students. But first, we must teach those practices to the next
+generation of nuclear engineers.
 
-This summary will first motivate the need for modernized university-level nuclear
-engineering curriculum in scientific software development and data analysis
-from the perspective of modern best practices.  Next, this summary will introduce
-the project-driven content and timeline for the course as well as the
+We present an example course syllabus that will introduce university students
+to modern computational concepts and tools. By incorporating recent insights
+from software development, this course equips students with skills essential
+to effective research in the data- and computing- intensive domain of nuclear
+engineering.  To transform students into more effective researchers, this
+course emphasizes:
+
+\begin{itemize}
+\item \textbf{Accessibility}: with a contemporary, high-level, object-oriented, open-source programming language,
+\item \textbf{Power}: with sophisticated library design principles and powerful data structures,
+\item \textbf{Accuracy}: with workflows that emphasize testing and capture provenance,
+\item \textbf{Openness}: with projects and exercises emphasizing open science, code review, and collaboration.
+\end{itemize}
+
+In this way, the course follows the topics in the book, ``Effective Computation
+in Physics: A Field Guide to Research in Python'' \cite{scopatz_effective_2015}
+and uses that work as the course textbook.  By emphasizing projects along the
+way, the students in this course will learn to create free and open source
+tools, verify the functioning of those tools, and publish them online.
+Additionally, the syllabus for this course is open-source licensed, allowing
+professors to use, re-mix, and collaboratively improve the syllabus for free.
+
+This summary will first motivate the need for new university-level nuclear
+engineering  computational curriculum  from the perspective of  scientific
+software development and data analysis best practices.  Next, this summary will
+introduce the project-driven content and timeline for the course as well as the
 collaborative nature of lesson content itself. Finally, the success of
 similar training will be discussed along with a schedule of future pilots of
 the course.
 
-\section{Motivation}
+\section{Motivation and Strategy}
 
-Nuclear engineering is an exceptionally computational field. Indeed, in the very early
-days of computing,  nuclear applications drove the majority of innovation
-in computers, computation, and scientific simulation \cite{rhodes_making_2012}. Today's nuclear
-engineering students, however, are not as poised to become leaders in computing,
-as was once the case.
-In part, this is due to the regulatory climate in nuclear engineering which
-necessitates the use of battle-hardened software implemented in legacy
-programming languages. Accordingly, modern programming languages absent from
-our curriculum, and so too are the modern
-best practices in scientific software development \cite{wilson_best_2014} that
-have evolved alongside them.
+% nuclear engineering used to be at the top
+%% we have enormous data
+%% we used to drive research
+
+% by failing to keep up, we've fallen behind
+%% we still use fortran
+%% we don't revamp our computational classes accordingly
+
+% other domains are incorporating data science and modern software methods
+%% in doing so, they are able to uncover new insights in their domains
+%% we can too
+
+% as it stands students leave unready to contribute to research
+%% efficient use of computers is efficient science
+%% incorporating the school-of-open-source into the curriculum alleviates this
 
 Nuclear engineering once led the world in computing and has fallen behind, but
-not because the challenges have gotten easier. In fact, nuclear engineering
-applications continue to rely on enormous datasets in many
-dimensions, traverse disparate scales, incorporate many physics, and demand
-precision.
-
-%Typical nuclear data typically takes the form of large libraries involving
-%tabulated and evaluated data representing neutron, charged particle, and atomic
-%reaction probabilities for all of the more than three thousand known
-%radionuclides.
+not because our computing challenges have gotten easier. In fact, nuclear engineering
+applications continue to rely on enormous datasets in many dimensions, traverse
+disparate scales, incorporate many physics, and demand precision.
 
 For example, the driving equation for neutron behavior, the time-dependent
 Boltzmann equation, is solved in a 7-dimensional phase space, ($3$ in space, $2$
@@ -100,14 +123,48 @@ software development could have an enormous impact on reproducibility in
 nuclear science and engineering. Thus equipped, their contributions to nuclear
 engineering may even have a revitalizing effect on the field.
 
-\subsection{Modern Programming Languages}
+\subsection{Python as a First Language}
 
-Due to our reliance on legacy software, the undergraduate first course in
-computing at many Nuclear Engineering departments emphasizes Fortran
-rather the modern equivalents, Python and C++. Studies have shown that
-productivity in a high-level language (like Python).
+One explanation for technological stagnation in our course work might be our
+historic reliance on legacy code. In nuclear engineering, the regularoty climate
+has has necessitated the use of battle-hardened software implemented in legacy
+programming languages. Accordingly, contemporary programming languages are
+absent from our curriculum, and so too are the best practices in scientific
+software development \cite{wilson_best_2014} that have evolved alongside them.
 
-Python programming scales to meet the demands of high performance computing applications.
+Specifically, due to our reliance on legacy software written in Fortran, the
+undergraduate first course in computing at many Nuclear Engineering departments
+emphasize MATLAB or Fortran rather the current object-oriented equivalents,
+Python and C++.
+
+Python, a high-level, dynamically-typed language, is now the most popular
+language for inroductory Computer Science curriculum \cite{guo_python_2014} and
+is very popular for education more broadly
+\cite{myers_python_2014,stajano_raising_2000,backer_computational_2007}. Its
+readable syntax \cite{stefik_empirical_2013}, straightforwared
+object-orientation, and open source packages give it an enormous educational
+advantage over competitors (see Figure \ref{fig:guo}) whose licenses limit the
+flexibility and shareability of software produced within those frameworks.
+
+\begin{figure}[htbp!]
+\begin{center}
+\includegraphics[width=0.4\textwidth]{guo.eps}
+\end{center}
+\caption{Python popularity in introductory computer science curriculum. Figure
+reproduced from \cite{guo_python_2014}. }
+\label{fig:guo}
+\end{figure}
+
+
+In addition to the above reasons, the authors recommend using Python
+because object-orientated languages are already becoming common in nuclear
+engineering software development.  Neglecting object orientation at the high
+level (with MATLAB) or at the low level (with Fortran) leaves students
+unprepared to participate in the cutting edge software in our field,
+increasingly written in those object oriented languages (e.g.
+Serpent\cite{lepanen_serpent_2011}, MOOSE\cite{gaston_moose_2014}, and
+PyNE\cite{scopatz_pyne_2013}).
+
 
 \subsection{Efficient and Reproducible Workflows}
 
@@ -115,7 +172,15 @@ Best practices for efficient and reproducible modeling and analysis, though
 common in commercial software development, are typically missing from nuclear
 engineering curriculum as well. A similar lack of such workflows across
 academic science at large and is  at the root of an enormous credibility
-crisis in scientific computing \cite{donoho, stodden}.
+crisis in scientific computing \cite{donoho_reproducible_2009,
+stodden_scientific_2010}.
+
+Tools available for reproducible science should be emphasized early in order to
+prepare students for the rigor of engineering work. Concepts such as
+verification and validation should be instilled in a computational course.
+Doing this through the implementation of unit test suites, version control,
+debugging skills, and other defensive programming techniques will create not
+only more accurate software, b
 
 \subsection{Open Source and Open Science}
 
@@ -129,12 +194,19 @@ unknown in nuclear where a combination of export control issues and antiquated
 workflow paradigms mean that only a very small number of tools have been open
 sourced \cite{moose}\cite{pyne}\cite{cyclus}.
 
-Since Python is open source, students are able to use it more flexibly and for
-free than alternative high-level frameworks, like MATLAB.
+In addition for formulating the course around an open source language (Python),
+the projects in the course are focused on student contributions to actual open source
+projects in nuclear engineering. Potential code-bases to which studnets could
+propose contributions include MOOSE\cite{gaston_moose_year},
+PyNE\cite{scopatz_pyne_year}, \textsc{Cyclus}\cite{cyclus}, and
+even OpenMC\cite{openmc} and OpenMOC\cite{openmoc}.
 
-\section{Course Recommendations}
+The skills learned in contributing to open source software go far beyond best
+practices in computing. They extend to the skills needed for scientific
+collaboration including communication, peer review, and objectivity.
 
-\subsection{Content}
+\subsection{Example Syllabus}
+
 To train the workforce in a authors recommend a course covering the topics
 above in a high level language (Python). A twelve week course with two days per
 week would have the following schedule:
@@ -185,10 +257,10 @@ week would have the following schedule:
 \end{table*}
 
 
-
-\subsection{Open, Collaborative Syllabus}
-
-The syllabus is open and collaborative.
+The syllabus above, along with lesson plans, exercises, customizable homeworks,
+grading rubrics, and project assignments is to be released online by Fall 2016.
+The syllabus is also an open and collaborative resource, which can be used
+and modified freely.
 
 \subsection{Textbook: Effective Computation In Physics}
 
@@ -201,7 +273,12 @@ The syllabus is open and collaborative.
 \end{figure}
 
 The textbook.
+
+
 \section{Experience}
+
+Similar approaches have produced positive outcomes in courses within other domains
+(e.g. biology \cite{} and astrophysics\cite{}) and have  as workshop-style  \cite{thw_ans, swc}
 
 \subsection{Software Carpentry}
 
@@ -221,21 +298,19 @@ automated unit testing.
 
 \section{Conclusions}
 
-This course will equip students with modern concepts that will make them more
+This course will equip students with contemporary concepts that will make them more
 effective researchers in the data and computing intensive domain of nuclear
-engineering. These concepts include modules for :
-
-\begin{itemize}
-\item getting started with a modern, high-level, object-oriented programming language,
-\item getting nuclear engineering work done with sophisticated library design employing powerful data structures,
-\item getting correct results by employing workflows that emphasize tests and capture provenance,
-\item getting work publication ready with the help of modern computing.
-\end{itemize}
-
-By emphasizing projects along the way, the students in this course will learn
-to create free and open source tools, verify the functioning of those tools,
-and publish them online.  Finally, the syllabus and course textbook are open
-and affordable, respectively.
+engineering. The course prepares students with fundamental skills such
+as mobility in the UNIX shell, scripting, analysis, and visualization. Beyond
+that, it prepares them for more high performance computing tasks by introducing
+object orientation, databases, and parallelization. It also prepares them to
+incorporate reproducibility and accuracy into their scientific work through
+version control, testing, and automated workflow pipelines.  Finally, by
+emphasizing the contributions to real open source projects along the way, the
+students in this course will learn to create and collaborate on free and open
+source tools, verify the functioning of those tools, and publish them online.
+Finally, the syllabus and course textbook are open and affordable,
+respectively.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
