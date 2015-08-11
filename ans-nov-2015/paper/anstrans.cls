@@ -1,27 +1,13 @@
 %  American Nuclear Society Transaction template
-%  by Seth R. Johnson, based on the ANS transaction guidelines
-%
-% For further updates, see http://reference-man.com/projects.html#anstemplate
+%  by Seth R. Johnson, based on the ANS transaction template and Edward W.
+%  Larsen
 %
 % Usage: \documentclass{anstrans}
-%  Define \title and \author as usual, and also define \institute and \email .
-%  For two-column tables, use the table* environment. Multiple authors should
-%  look like 
-%   {Seth R. Johnson \and Edward W. Larsen}
-%
-% v1.1.4: Added disclaimer option (thanks to Aaron Bevill)
-% v1.1.3: Improved header behavior
-% v1.1.2: Improved spacing for standards compliance
-%         now commas separate author names
-%         Added support for proper equation numbering in appendices
-% v1.1.1: Figure and table captions are now flush with the left as the
-%         standards specify. Now uses the ``txfonts'' package for much improved
-%         Times-compatible math font.
-%
+% define \title and \author as usual, and also define \institute and \email
 
 \NeedsTeXFormat{LaTeX2e}[1995/12/01]
 
-\ProvidesClass{anstrans}[2011/06/07 v1.1.4 ANS Transaction class]
+\ProvidesClass{anstrans}[2008/01/14 v1.1 ANS Transaction class]
 
 %%%%%%%%%%% TYPE AND GEOMETRY %%%%%%%%%%%
 \LoadClass[twocolumn,10pt]{article}
@@ -30,17 +16,14 @@
 
 \RequirePackage[text={7in,9in},centering]{geometry}
 
-% ams math must be loaded before txfonts
-\usepackage{amsmath}
-% Use Times for math font and text font.
+%%use times for math font
 \RequirePackage[T1]{fontenc}
-\RequirePackage{txfonts}
-% bold math must be loaded after Times font
-\usepackage{bm}
+\RequirePackage{mathptmx}
 
 %%%%%%%%%%% INCLUDE PACKAGES %%%%%%%%%%%
-\RequirePackage{cuted} % defines 'strip' environment for single column
+\RequirePackage{cuted} % for single column in a multicolumn doc
 \RequirePackage{indentfirst}	% indent the leading paragraph
+\RequirePackage{amsmath}
 
 %%%%%%%%%%% REQUIRED VARIABLES %%%%%%%%%%%
 \newif\if@institutedefined
@@ -52,20 +35,6 @@
 \@emaildefinedfalse
 \def\@email{\PackageWarning{anstrans}{No email address has been defined.}}
 \newcommand{\email}[1]{\def\@email{#1}\@emaildefinedtrue}
-
-\newif\if@disclaimerdefined
-\@disclaimerdefinedfalse
-\def\@disclaimer{}
-\newcommand{\disclaimer}[1]{\def\@disclaimer{#1}\@disclaimerdefinedtrue}
-
-%%%%%%%%%%% PARAGRAPH FORMATTING %%%%%%%%%%%
-\setlength{\parindent}{0.25in}
-
-%% For more aesthetically pleasing but looser spacing (more pages),
-%% comment these lines:
-\AtBeginDocument{\setlength{\baselineskip}{11pt}}
-\setlength{\lineskip}{0pt plus 2pt minus 2pt}
-\setlength{\parskip}{0pt}
 
 %%%%%%%%%%% SECTIONING %%%%%%%%%%%
 \setcounter{secnumdepth}{-2} %hide all section heading numbers
@@ -85,31 +54,11 @@
 }
 
 \renewcommand\subsubsection{\@startsection
-	{subsubsection}{1}{-\parindent}%		%name, level, indent
+	{subsubsection}{1}{-1em}%		%name, level, indent
 	{-.75\baselineskip}%		%beforeskip
 	{.5\baselineskip}%		%afterskip
 	{\reset@font\emph}%
 }
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% APPENDIX %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% appendix needs equations labeled A.1 etc., but shouldn't look like 
-%   A   MY FIRST APPENDIX
-\let\@oldappendix\appendix
-\renewcommand\appendix{%
-\setcounter{secnumdepth}{-1}%keep section headings
-\renewcommand\theequation{\thesection.\arabic{equation}}
-\@oldappendix
-\renewcommand\section{%
-\addtocounter{section}{1}%
-\setcounter{equation}{0}%reset equation counter
-\@startsection%
-	{section}{1}{0pt}%		%name, level, indent
-	{-\baselineskip}%		%beforeskip
-	{.75\baselineskip}%		%afterskip
-	{\reset@font\bf\MakeUppercase}%
-}%
-}
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% BIBLIOGRAPHY %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \renewcommand\@biblabel[1]{#1.} %change from [x] to x.
 
@@ -125,7 +74,6 @@
 	\@endoldthebibliography%
 	\end{@oldthebibliography}%
 }
-
 %%%%%%%%%%% CHANGE TABLE/FIGURE STYLE %%%%%%%%%%%
 \renewcommand{\figurename}{Fig.}
 \renewcommand{\tablename}{TABLE}
@@ -135,51 +83,38 @@
 \setlength{\textfloatsep}{0.5\baselineskip}
 \setlength{\intextsep}{0.5\baselineskip}
 
-\renewcommand{\bottomfraction}{0.9}
-\renewcommand{\topfraction}{0.9}
+\renewcommand{\bottomfraction}{0.5}
 
-% captions should be flush with the left and use a stop instead of a colon
-\long\def\@makecaption#1#2{%
-  \vskip\abovecaptionskip
-  {#1. #2\par}
-  \vskip\belowcaptionskip}
-
-% tables use roman numerals
-\renewcommand\thetable{\@Roman\c@table}
-
-%%%% Title section
-\setlength{\stripsep}{0pt}
-\renewcommand{\maketitle}{%
-  \begin{strip}%
-    \centering%
+%%%%%%%%%%% GENERATE PORTIONS OF THE DOCUMENT %%%%%%%%%%%
+\renewcommand{\maketitle}{
+  \begin{strip} \vspace*{-35pt}
+    \begin{center}
       %title
-      {\bf \@title\if@disclaimerdefined{\footnotemark[1]{}}\fi}
-      \vspace{.75\baselineskip}%
-
+      \textbf{\@title}\par 
+      \vspace{1em}
       %author
-      {\def\and{\!, } \@author}%
-      \vspace{.75\baselineskip}%
-
+      \begin{tabular}[t]{c}
+        \@author
+      \end{tabular}
       %institute (optional?)
-      \if@institutedefined%
-        {\let\and\par \itshape \@institute}% 
-      \fi%
-
-      %email
-      \if@emaildefined%
-        {\def\and{\!, } \itshape \@email}%
-      \fi%
-      \vspace{\baselineskip}%
-
-  \end{strip}%
-
-  %disclaimer
-  \if@disclaimerdefined%
-  {\footnotetext[1]{\footnotesize \@disclaimer}}%
-  \fi
+      \if@institutedefined 
+        \par 
+        {\let\and\par \itshape \@institute} 
+      \fi
+      %email (optional?)
+      \if@emaildefined
+        \par 
+        {\itshape
+        \begin{tabular}[t]{c}
+          \@email
+        \end{tabular}
+        }
+      \fi
+    \end{center}
+    \vspace*{-1em}
+  \end{strip}
 }
 
-\AtBeginDocument{%
-  \maketitle%
+\AtBeginDocument{
+  \maketitle
 }
-
