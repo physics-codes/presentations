@@ -45,12 +45,13 @@ majority of innovation in computers, computation, and scientific simulation
 \cite{rhodes_making_2012}. Today's nuclear engineering students, however, are
 not poised to become leaders in computing, as was once the case. Modern
 scientific computing best practices have the potential to revitalize research
-computing in our domain and provide broader opportunities in industry for
-graduating students. But first, we must teach those practices to the next
+computing in this domain and provide broader opportunities in industry for
+graduating students. But first, those practices must be taught to the next 
 generation of nuclear engineers.
 
-We present an example course syllabus that will introduce university students
-to modern computational concepts and tools. By incorporating recent insights
+An example course syllabus is presented that will introduce university students
+to modern computational concepts and tools that encourage more reproducible, 
+verifiable, and reusable scientific software. By incorporating recent insights
 from software development, this course equips students with skills essential
 to effective research in the data- and computing- intensive domain of nuclear
 engineering.  To transform students into more effective researchers, this
@@ -98,9 +99,10 @@ the course.
 %% incorporating the school-of-open-source into the curriculum alleviates this
 
 Nuclear engineering once led the world in computing and has fallen behind, but
-not because our computing challenges have gotten easier. In fact, nuclear engineering
-applications continue to rely on enormous datasets in many dimensions, traverse
-disparate scales, incorporate many physics, and demand precision.
+not becaus computing challenges in the field have gotten simpler. Quite the 
+contrary. Nuclear engineering applications continue to rely on datasets that 
+are often enormous in many dimensions, traverse disparate scales, incorporate 
+many physics, and demand precision.
 
 For example, the driving equation for neutron behavior, the time-dependent
 Boltzmann equation, is solved in a 7-dimensional phase space, ($3$ in space, $2$
@@ -109,7 +111,7 @@ simulation is therefore inherently large, spanning five orders of magnitude in s
 ten in neutron energy. Resolved discretization across those scales would require
 over $10^{17}$ degrees of freedom per timestep, well beyond the
 capabilities of even exascale computing. In this way, without sophisticated
-data and analysis methods, we would run out of computational resources before
+data and analysis methods, nuclear engieers would run out of computational resources before
 heat transport, fluid flow, or material performance in the reactor had even
 been addressed.
 
@@ -125,14 +127,16 @@ engineering may even have a revitalizing effect on the field.
 
 \subsection{Python as a First Language}
 
-One explanation for technological stagnation in our coursework might be our
-historic reliance on legacy code. In nuclear engineering, the regulatory climate
-has has necessitated the use of battle-hardened software implemented in legacy
+One explanation for technological stagnation in nuclear engineering coursework 
+might be the historic reliance on legacy code in the field. In nuclear 
+engineering, the regulatory climate has has necessitated the use of 
+battle-hardened software implemented in legacy
 programming languages. Accordingly, contemporary programming languages are
-absent from our curriculum, and so too are the best practices in scientific
+absent from nuclear engineering curriculum, and so too are the best practices in scientific
 software development \cite{wilson_best_2014} that have evolved alongside them.
 
-Specifically, due to our reliance on legacy software written in Fortran, the
+%TODO this paragraph should attack matlab, not fortran
+Specifically, due to reliance on legacy software written in Fortran, the
 undergraduate first course in computing at many Nuclear Engineering departments
 emphasize MATLAB or Fortran rather the contemporary equivalents, Python and C++.
 
@@ -142,7 +146,7 @@ is very popular for education more broadly
 \cite{myers_python_2007,stajano_python_2000,backer_computational_2007}. Its
 readable syntax \cite{stefik_empirical_2013}, straightforward
 object-orientation, and open source packages give it an enormous educational
-advantage over competitors (see Figure \ref{fig:guo}) whose licenses limit the
+advantage over competitors (see Fig. \ref{fig:guo}) whose licenses limit the
 flexibility and share-ability of software produced within those frameworks.
 
 \begin{figure}[htbp!]
@@ -159,15 +163,14 @@ In addition to the above reasons, the authors recommend using Python
 because object-orientated languages are already becoming common in nuclear
 engineering software development.  Neglecting object orientation at the high
 level (with MATLAB) or at the low level (with historical Fortran) leaves students
-unprepared to participate in the cutting edge software in our field,
-increasingly written in those object oriented languages (e.g.
+unprepared to participate in the cutting edge software in nuclear engineering 
+since new tools are increasingly written in those object oriented languages (e.g.
 Serpent\cite{leppanen_serpentcontinuous-energy_2013}, 
 MOOSE\cite{gaston_moose:_2009}, and
 PyNE\cite{scopatz_pyne:_2012}). It should be noted that modern Fortran specifications 
 are object-oriented.  However, these capabilities are often not covered in 
 engineering courses in favor of a more long-standing procedural style from historical
 Fortran languages.
-
 
 \subsection{Efficient and Reproducible Workflows}
 
@@ -225,7 +228,7 @@ week would have the following schedule:
 & \multirow{6}{*}{\textbf{Fuel Geometry Class}}\\
 & 2 & Programming Blast Off with Python & \\
 & 3 & Essential Containers & \\
-& 4 & Flow Control \& Logic & \\
+& 4 & Flow Control and Logic & \\
 & 5 & Operating with Functions & \\
 & 6 & Classes and Objects & \\
 \hline
@@ -233,7 +236,7 @@ week would have the following schedule:
 & 7 & Regular Expressions
 & \multirow{6}{*}{\textbf{Database I/O and Visualization}}\\
 & 8 & NumPy: Thinking in Arrays & \\
-& 9 & Storing Data: Files \& HDF5 & \\
+& 9 & Storing Data: Files and HDF5 & \\
 & 10 & Important Data Structures & \\
 & 11 & Analysis and Visualization & \\
 & 12 & Performing in Parallel & \\
@@ -255,8 +258,8 @@ week would have the following schedule:
 & 22 & Licenses, Ownership, and Copyright & \\
 \hline
 \end{tabular}
-\caption{Lesson content per week.}
 \label{tab:syllabus}
+\caption{Lesson content per week.}
 \end{table*}
 
 
@@ -265,25 +268,13 @@ grading rubrics, and project assignments is to be released online by Fall 2016.
 The syllabus is also an open and collaborative resource, which can be used
 and modified freely.
 
-\subsection{Textbook: Effective Computation In Physics}
-
-\begin{figure}[htbp!]
-\begin{center}
-\includegraphics[width=0.4\textwidth]{ecip.eps}
-\end{center}
-\caption{The textbook for the course is Effective Computation in Physics: A Field Guide To Research in Python}
-\label{fig:book}
-\end{figure}
-
-The textbook.
-
-
 \section{Experience}
 
 Similar approaches have produced positive outcomes in courses within other domains
 (e.g. biology 
 \cite{matthews_using_2010,honts_evolving_2003,tjaden_multidisciplinary_2007,libeskind-hadas_first_2013} 
-and physics\cite{baxter_scientific_2014,myers_python_2007}) and have as workshop-style  
+and physics\cite{baxter_scientific_2014,myers_python_2007}) and have succeeded 
+as workshop-style interdisciplinary efforts 
 \cite{huff_rapid_2011,wilson_software_2006,wilson_software_2014}
 
 \subsection{Software Carpentry}
@@ -294,7 +285,7 @@ by the Software Carpentry Foundation, an organization that
 Software Carpentry has been involved with teaching scientific computing best
 practices for over a decade. Students have come from many areas of science and
 usually no programming experience is necessary to attend a course. The courses
-are typically two days and cover skills for "Doing more with less pain."
+are typically two days and cover skills for ``Doing more with less pain.''
 
 Also, the testing, debugging, and collaboration sessions were taught as a part
 of a recent workshop at the University of California Berkeley. The students, in
@@ -317,6 +308,13 @@ students in this course will learn to create and collaborate on free and open
 source tools, verify the functioning of those tools, and publish them online.
 Finally, the syllabus and course textbook are open and affordable,
 respectively.
+
+\section{Acknowledgements} 
+
+The authors would like to acknowledge the influence of Software Carpentry, The 
+Hacker Within, the Berkeley Institute for Data Science, the African Institute 
+for Mathematical Sciences, and especially Prof. Paul P.H. Wilson for their important 
+contributions to the formation of both the book and the resulting course.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
